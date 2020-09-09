@@ -1,12 +1,16 @@
 import { applyMiddleware, createStore, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers';
+import saga from './saga';
 
 export const configureStore = () => {
+    const sagaMiddleware = createSagaMiddleware();
+
     // @ts-ignore
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-    const middlewares: any = [];
+    const middlewares = [sagaMiddleware];
 
     const store = createStore(
         rootReducer,
@@ -18,6 +22,8 @@ export const configureStore = () => {
         // @ts-ignore
         module.hot.accept('./reducers', () => store.replaceReducer(rootReducer))
     }
+
+    sagaMiddleware.run(saga);
 
     return store;
 };

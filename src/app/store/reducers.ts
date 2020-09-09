@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-const reducers = combineReducers({
+import articlesReducer from '../../features/articles/store/reducer';
+import systemReducer from '../../features/system/reducer';
 
+const reducers = combineReducers({
+    articles: articlesReducer,
+    system: systemReducer,
 });
 
 export type RootState = ReturnType<typeof reducers>;

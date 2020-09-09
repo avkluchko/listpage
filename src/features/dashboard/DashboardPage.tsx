@@ -1,23 +1,25 @@
 import React from 'react';
 import { Link, RouteComponentProps } from '@reach/router';
 
+import usePageTitle from '../system/usePageTitle';
+
 const DashboardPage: React.FC<RouteComponentProps> = () => {
+    usePageTitle();
+
     return (
         <div>
-            <h2>Dashboard Page</h2>
-
             <ul>
                 <li>
                     <p>Articles</p>
                     <ul>
                         <li>
-                            <Link to="/articles/nodejs">JavaScript</Link>
+                            <Link to="/articles/javascript">JavaScript</Link>
                         </li>
                         <li>
                             <Link to="/articles/nodejs">NodeJS</Link>
                         </li>
                         <li>
-                            <Link to="/articles/nodejs">TypeScript</Link>
+                            <Link to="/articles/typescript">TypeScript</Link>
                         </li>
                     </ul>
                 </li>

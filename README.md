@@ -3,6 +3,7 @@
 ## Features
 - routes
 - lazy loading modules
+- redux-saga
 
 ## Usage
 
