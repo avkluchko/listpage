@@ -24,7 +24,15 @@ const initialState: ArticleState = {
 export default function articlesReducer(state = initialState, action: ArticleActionTypes): ArticleState {
     switch (action.type) {
         case INIT_PAGE:
-            return state;
+            const { group, urlParams } = action.payload;
+
+            const params = { ...state.params, ...urlParams };
+
+            return {
+                ...state,
+                group,
+                params
+            };
 
         case CHANGE_PARAMS:
             return state;
