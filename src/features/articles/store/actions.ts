@@ -1,6 +1,7 @@
+import { ParsedQuery } from '../../../helpers/query';
 import { ArticleActionTypes, CHANGE_PARAMS, INIT_PAGE } from './types';
 
-export function initPage(group: string, urlParams: object): ArticleActionTypes {
+export function initPage(group: string, urlParams: ParsedQuery ): ArticleActionTypes {
     return {
         type: INIT_PAGE,
         payload: {

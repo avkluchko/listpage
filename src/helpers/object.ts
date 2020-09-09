@@ -1,7 +1,5 @@
-type ParamsValue = string | string[] | number | null | undefined;
-
-interface Params {
-    [key: string]: ParamsValue;
+export interface Params {
+    [key: string]: any;
 }
 
 export const replaceParams = (params: Params, newParams: Params = {}) => {
@@ -17,4 +15,23 @@ export const replaceParams = (params: Params, newParams: Params = {}) => {
     return result;
 }
 
-const isUndefinedOrEmpty = (value?: ParamsValue) => value === undefined || value === '';
+const isUndefinedOrEmpty = (value?: any) => value === undefined || value === '';
+
+export const subtractParams = (params: Params = {}, defaultParams: Params = {}) => {
+    if (Object.keys(params).length === 0) {
+        return {};
+    }
+
+    if (Object.keys(defaultParams).length === 0) {
+        return params;
+    }
+
+    let result: Params = {};
+    Object.keys(params).forEach(key => {
+        if (defaultParams[key] === undefined || params[key] !== defaultParams[key]) {
+            result[key] = params[key];
+        }
+    });
+
+    return result;
+}

@@ -19,7 +19,13 @@ const DashboardPage: React.FC<RouteComponentProps> = () => {
                             <Link to="/articles/nodejs">NodeJS</Link>
                         </li>
                         <li>
+                            <Link to="/articles/nodejs?page=3&limit=50&filter=">NodeJS page=3&limit=50&filter=</Link>
+                        </li>
+                        <li>
                             <Link to="/articles/typescript">TypeScript</Link>
+                        </li>
+                        <li>
+                            <Link to="/articles/typescript?page=2&limit=10&filter=123">TypeScript page=2&limit=10&filter=123</Link>
                         </li>
                     </ul>
                 </li>

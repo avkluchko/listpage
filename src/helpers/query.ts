@@ -1,6 +1,6 @@
 import qs from 'query-string';
 
-interface ParsedQuery {
+export interface ParsedQuery {
     [key: string]: string | string[] | number | null | undefined;
 }
 
