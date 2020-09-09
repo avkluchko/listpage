@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from '@reach/router';
+
 import usePageTitle from '../../../system/usePageTitle';
 
 interface Props extends RouteComponentProps {

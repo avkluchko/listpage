@@ -4,7 +4,7 @@ import { Link, RouteComponentProps } from '@reach/router';
 import usePageTitle from '../system/usePageTitle';
 
 const DashboardPage: React.FC<RouteComponentProps> = () => {
-    usePageTitle();
+    usePageTitle('Dashboard');
 
     return (
         <div>
